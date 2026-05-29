@@ -1,92 +1,180 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="menu.css">
-        <title>Главная страница</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="sidebar">
-                <a class="butts" href="#">Меню</a>
-                <a href="#service">Услуги</a>
-                <a href="#mans">Работники</a>
-                <a href="#contats">Контакты</a>
-            </div>
-            <div class="Main">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RostovPC — ремонт компьютеров в Ростове-на-Дону</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a class="butts" href="#" onclick="showPage('home')">Меню</a>
+            <a href="#" onclick="showPage('services')">Услуги</a>
+            <a href="#" onclick="showPage('workers')">Работники</a>
+            <a href="#" onclick="showPage('contacts')">Контакты</a>
+        </div>
+        
+        <div class="Main">
+            <!-- Главная страница -->
+            <div id="home-page">
                 <h1>RostovPC — ремонт компьютеров в Ростове-на-Дону</h1>
                 <b>Наши услуги:</b>
                 <ul class="skills">
                     <li>
-                        <img src="images/cleaning.png" alt="Чистка ПК">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230000BA'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='white'%3E🧹%3C/text%3E%3C/svg%3E" alt="Чистка ПК">
                         <span>Замена термопасты и чистка от пыли</span>
                     </li>
-                
                     <li>
-                        <img src="images/windows.png" alt="Windows">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230000BA'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='white'%3E🪟%3C/text%3E%3C/svg%3E" alt="Windows">
                         <span>Установка Windows и программ</span>
                     </li>
-                
                     <li>
-                        <img src="images/hardware.png" alt="Комплектующие">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230000BA'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='white'%3E🖥️%3C/text%3E%3C/svg%3E" alt="Комплектующие">
                         <span>Замена комплектующих (жесткий диск, оперативная память и тд.)</span>
                     </li>
-                
                     <li>
-                        <img src="images/virus.png" alt="Антивирус">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230000BA'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='white'%3E🛡️%3C/text%3E%3C/svg%3E" alt="Антивирус">
                         <span>Удаление вирусов</span>
                     </li>
-                
                     <li class="center-item">
-                        <img src="images/recovery.png" alt="Восстановление данных">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230000BA'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='white'%3E💾%3C/text%3E%3C/svg%3E" alt="Восстановление данных">
                         <span>Восстановление данных</span>
                     </li>
                 </ul>
             </div>
+
+            <!-- Страница "Услуги" -->
+            <div id="services-page" style="display: none;">
+                <h1>💰 Прайс-лист на услуги</h1>
+                <b>Стоимость работ</b>
+                <ul class="skills" style="grid-template-columns: 1fr;">
+                    <li class="price-item">
+                        <span>🔧 Диагностика компьютера</span>
+                        <span class="price-value">Бесплатно</span>
+                    </li>
+                    <li class="price-item">
+                        <span>🧹 Чистка от пыли + замена термопасты</span>
+                        <span class="price-value">от 1500 ₽</span>
+                    </li>
+                    <li class="price-item">
+                        <span>🪟 Установка Windows / программ</span>
+                        <span class="price-value">от 1000 ₽</span>
+                    </li>
+                    <li class="price-item">
+                        <span>🔧 Замена комплектующих</span>
+                        <span class="price-value">от 500 ₽</span>
+                    </li>
+                    <li class="price-item">
+                        <span>🛡️ Удаление вирусов</span>
+                        <span class="price-value">от 800 ₽</span>
+                    </li>
+                    <li class="price-item">
+                        <span>💾 Восстановление данных</span>
+                        <span class="price-value">от 2000 ₽</span>
+                    </li>
+                    <li class="price-item">
+                        <span>🖨️ Настройка периферии (принтеры, сканеры)</span>
+                        <span class="price-value">от 700 ₽</span>
+                    </li>
+                </ul>
+                <button class="back-btn" onclick="showPage('home')">← На главную</button>
+            </div>
+
+            <!-- Страница "Работники" -->
+            <div id="workers-page" style="display: none;">
+                <h1>👨‍💻 Наши специалисты</h1>
+                <b>Опыт — более 10 лет</b>
+                <div class="skills workers-grid">
+                    <div class="worker-card">
+                        <div class="worker-avatar">👨‍🔧</div>
+                        <div class="worker-name">Алексей Соколов</div>
+                        <div class="worker-role">Ведущий инженер</div>
+                        <div class="worker-desc">Стаж 12 лет. Эксперт по диагностике и ремонту материнских плат</div>
+                    </div>
+                    <div class="worker-card">
+                        <div class="worker-avatar">👩‍💻</div>
+                        <div class="worker-name">Елена Морозова</div>
+                        <div class="worker-role">Специалист по ПО</div>
+                        <div class="worker-desc">Установка Windows, удаление вирусов, настройка серверов</div>
+                    </div>
+                    <div class="worker-card">
+                        <div class="worker-avatar">👨‍🎓</div>
+                        <div class="worker-name">Дмитрий Ветров</div>
+                        <div class="worker-role">Мастер по ремонту</div>
+                        <div class="worker-desc">Замена комплектующих, восстановление данных, чистка ПК</div>
+                    </div>
+                    <div class="worker-card">
+                        <div class="worker-avatar">👨‍🚀</div>
+                        <div class="worker-name">Игорь Громов</div>
+                        <div class="worker-role">Сетевой инженер</div>
+                        <div class="worker-desc">Настройка сетей, Wi-Fi, серверное оборудование</div>
+                    </div>
+                </div>
+                <button class="back-btn" onclick="showPage('home')">← На главную</button>
+            </div>
+
+            <!-- Страница "Контакты" -->
+            <div id="contacts-page" style="display: none;">
+                <h1>📞 Контакты и адрес</h1>
+                <b>Свяжитесь с нами удобным способом</b>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>📍 Адрес</h3>
+                        <p>г. Ростов-на-Дону, пр. Буденновский, 80<br>БЦ "Горизонт", 2 этаж, офис 205</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>📱 Телефоны</h3>
+                        <p>📞 +7 (863) 123-45-67 (отдел ремонта)<br>📞 +7 (928) 987-65-43 (выезд мастера)</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>✉️ Email</h3>
+                        <p>📧 info@rostovpc.ru — общие вопросы<br>📧 master@rostovpc.ru — заявки на ремонт</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>🕒 Режим работы</h3>
+                        <p>Пн-Пт: 9:00 — 20:00<br>Сб: 10:00 — 18:00<br>Вс: выходной</p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>🚀 Онлайн-запись</h3>
+                        <p>Запишитесь на диагностику через Telegram: @rostovpc_bot<br>Или в WhatsApp: +7 (928) 987-65-43</p>
+                    </div>
+                </div>
+                <button class="back-btn" onclick="showPage('home')">← На главную</button>
+            </div>
         </div>
-        <div class="elem-container">
-            <div class="elem-group">
-                <article id="elem11"></article>
-                <article id="elem12"></article>
-                <article id="elem13"></article>
-                <article id="elem14"></article>
-            </div>
-            <div>
-                <article id="elem21"></article>
-                <article id="elem22"></article>
-                <article id="elem23"></article>
-                <article id="elem24"></article>
-            </div>
-            <div>
-                <article id="elem31"></article>
-                <article id="elem32"></article>
-                <article id="elem33"></article>
-                <article id="elem34"></article>
-            </div>
-            <div>
-                <article id="elem41"></article>
-                <article id="elem42"></article>
-                <article id="elem43"></article>
-                <article id="elem44"></article>
-            </div>
-            <div>
-                <article id="elem51"></article>
-                <article id="elem52"></article>
-                <article id="elem53"></article>
-                <article id="elem54"></article>
-            </div>
-            <div>
-                <article id="elem61"></article>
-                <article id="elem62"></article>
-                <article id="elem63"></article>
-                <article id="elem64"></article>
-            </div>
-             <div>
-                <article id="elem71"></article>
-                <article id="elem72"></article>
-                <article id="elem73"></article>
-                <article id="elem74"></article>
-            </div>
-        </div>
-    </body>
+    </div>
+
+    <!-- Декоративные круги -->
+    <div class="elem-container">
+        <div><article id="elem11"></article><article id="elem12"></article><article id="elem13"></article><article id="elem14"></article></div>
+        <div><article id="elem21"></article><article id="elem22"></article><article id="elem23"></article><article id="elem24"></article></div>
+        <div><article id="elem31"></article><article id="elem32"></article><article id="elem33"></article><article id="elem34"></article></div>
+        <div><article id="elem41"></article><article id="elem42"></article><article id="elem43"></article><article id="elem44"></article></div>
+        <div><article id="elem51"></article><article id="elem52"></article><article id="elem53"></article><article id="elem54"></article></div>
+        <div><article id="elem61"></article><article id="elem62"></article><article id="elem63"></article><article id="elem64"></article></div>
+        <div><article id="elem71"></article><article id="elem72"></article><article id="elem73"></article><article id="elem74"></article></div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('services-page').style.display = 'none';
+            document.getElementById('workers-page').style.display = 'none';
+            document.getElementById('contacts-page').style.display = 'none';
+            
+            if (pageId === 'home') {
+                document.getElementById('home-page').style.display = 'block';
+            } else if (pageId === 'services') {
+                document.getElementById('services-page').style.display = 'block';
+            } else if (pageId === 'workers') {
+                document.getElementById('workers-page').style.display = 'block';
+            } else if (pageId === 'contacts') {
+                document.getElementById('contacts-page').style.display = 'block';
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
 </html>
