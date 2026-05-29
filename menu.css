@@ -511,3 +511,47 @@ b{
     border-radius: 50%;
     z-index: 4;  
 }
+#elem71{
+    border: 1px solid #0000BA;
+    background-color: #0000BA;
+    position: absolute;
+    left: 1110px;      
+    bottom: 400px;     
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: 1;
+}
+#elem72 {
+    border: 1px solid #51a3f5;
+    background-color: #51a3f5;
+    position: absolute;
+    left: 1130px;      
+    bottom: 420px;     
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    z-index: 2;
+}
+#elem73 {
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    position: absolute;
+    left: 1150px;      
+    bottom: 440px;     
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    z-index: 3; 
+}
+#elem74 {
+    border: 1px solid #0000BA;
+    background-color: #0000BA;
+    position: absolute;
+    left: 1170px;      
+    bottom: 460px;     
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    z-index: 4;  
+}
