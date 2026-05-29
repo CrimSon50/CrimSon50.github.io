@@ -1,9 +1,25 @@
-.container {
-    display: flex;           
-    gap: 10px; 
-    min-height: 100vh;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+    background: linear-gradient(145deg, #eef2ff 0%, #d9e2f5 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+}
+
 .sidebar {
     margin: 0;
     width: 220px;
@@ -14,7 +30,11 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     padding: 15px 0;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
 }
+
 .sidebar a {
     display: block;
     color: white;
@@ -27,111 +47,53 @@
     transition: all 0.3s ease;
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    text-align: center;
 }
+
 .sidebar a.butts {
     background: linear-gradient(135deg, #0000BA, #51a3f5);
     color: white;
     text-align: center;
     font-size: 18px;
     font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .sidebar a:not(.butts) {
     margin-top: 5px;
     background: rgba(0, 0, 186, 0.5);
 }
+
 .sidebar a:hover:not(.butts) {
     background: #0000BA;
     border-color: white;
+    transform: translateX(6px);
 }
+
 .Main {
-    flex:1;
+    flex: 1;
     text-align: center;
 }
+
 h1 {
     background: linear-gradient(90deg, #0000BA, #51a3f5);
     border-radius: 30px;
-    display: inline-block; 
-    color:#ffffff; 
+    display: inline-block;
+    color: #ffffff;
     padding: 20px 30px;
     background-size: 400% 100%;
     animation: slide 7s ease-in-out infinite alternate;
+    margin-bottom: 20px;
 }
+
 @keyframes slide {
-    0% {
-        background-position: 100% 0; 
-    }
-    100% {
-        background-position: 0% 0;  
-    }
-}
-.skills{
-    list-style: none;
-    margin: 30px auto 0 auto;
-    padding: 30px;
-    max-width: 900px;
-    border: 2px solid rgba(0, 0, 186, 0.2);
-    border-radius: 40px;
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(10px);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    box-shadow:
-        0 15px 35px rgba(0,0,0,0.12),
-        inset 0 1px 0 rgba(255,255,255,0.4);
+    0% { background-position: 100% 0; }
+    100% { background-position: 0% 0; }
 }
 
-.skills li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: rgba(255,255,255,0.95);
-    border-radius: 30px;
-    padding: 25px 20px;
-    font-weight: 600;
-    color: #0000BA;
-    transition: all 0.35s ease;
-    border: 1px solid rgba(0,0,186,0.1);
-    box-shadow:
-        0 10px 20px rgba(0,0,0,0.08);
-}
-
-.skills li:hover{
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 20px 35px rgba(0,0,0,0.18);
-    background: linear-gradient(
-        135deg,
-        #ffffff,
-        #eef5ff
-    );
-}
-
-.skills li img{
-    width: 90px;
-    height: 90px;
-    object-fit: contain;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
-    transition: transform 0.3s ease;
-}
-
-.skills li:hover img{
-    transform: scale(1.08);
-}
-
-.skills li span{
-    line-height: 1.5;
-    font-size: 15px;
-}
-
-.skills li.center-item{
-    grid-column: span 2;
-}
-b{
-    display: block;  
+b {
+    display: block;
     text-align: center;
     font-size: 18px;
     background: #0000BA;
@@ -143,18 +105,199 @@ b{
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    
-    
 }
+
+.skills {
+    list-style: none;
+    margin: 30px auto 0 auto;
+    padding: 30px;
+    max-width: 900px;
+    border: 2px solid rgba(0, 0, 186, 0.2);
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.skills li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 25px 20px;
+    font-weight: 600;
+    color: #0000BA;
+    transition: all 0.35s ease;
+    border: 1px solid rgba(0, 0, 186, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.skills li:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.18);
+    background: linear-gradient(135deg, #ffffff, #eef5ff);
+}
+
+.skills li img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.skills li:hover img {
+    transform: scale(1.08);
+}
+
+.skills li span {
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.skills li.center-item {
+    grid-column: span 2;
+}
+
+.price-item {
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-direction: row !important;
+    padding: 20px 25px !important;
+}
+
+.price-item span:first-child {
+    font-size: 1.1rem;
+}
+
+.price-value {
+    color: #0000BA;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.workers-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+}
+
+.worker-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 25px 20px;
+    transition: all 0.35s ease;
+    border: 1px solid rgba(0, 0, 186, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.worker-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: linear-gradient(135deg, #ffffff, #eef5ff);
+}
+
+.worker-avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #0000BA, #51a3f5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 48px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.worker-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0000BA;
+    margin-bottom: 5px;
+}
+
+.worker-role {
+    color: #51a3f5;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.worker-desc {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.contact-info {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 25px;
+    margin: 20px 0;
+    text-align: left;
+    border: 1px solid rgba(0, 0, 186, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateX(10px);
+    background: linear-gradient(135deg, #ffffff, #eef5ff);
+}
+
+.contact-card h3 {
+    color: #0000BA;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.contact-card p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.back-btn {
+    background: #0000BA;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    margin-top: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background: #51a3f5;
+    transform: scale(1.05);
+}
+
 .elem-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;  
-    z-index: -1;
+    pointer-events: none;
+    z-index: 0;
 }
+
 #elem11{
     border: 1px solid #0000BA;
     background-color: #0000BA;
@@ -554,4 +697,20 @@ b{
     height: 180px;
     border-radius: 50%;
     z-index: 4;  
+}
+
+
+#home-page, #services-page, #workers-page, #contacts-page {
+    animation: fadeSlide 0.4s ease-out;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
